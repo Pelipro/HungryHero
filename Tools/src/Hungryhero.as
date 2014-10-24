@@ -5,6 +5,7 @@ package
 	import net.hires.debug.Stats;
 	
 	import starling.core.Starling;
+	
 	[SWF(frameRate="60", width="800", height="600", bakcgroundColor="0x333333")]
 	public class Hungryhero extends Sprite
 	{
