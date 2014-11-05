@@ -43,29 +43,42 @@ package screens
 			this.addChild(bg);
 		
 			
-			title = new Image(Assets.getTexture("WelcomeTitle"));
+			title = new Image(Assets.getAtlas().getTexture("Welcome_Title"));
 			this.addChild(title);
 		
 		
 			
-			hero = new Image(Assets.getTexture("WelcomeHero"));
+			hero = new Image(Assets.getAtlas().getTexture("Welcome_Hero"));
 			this.addChild(hero);
 			hero.x = -hero.width;
 			hero.y = 100;
 			
 			
-			playBtn = new Button(Assets.getTexture("WelcomePlayBtn")); 
+			playBtn = new Button(Assets.getAtlas().getTexture("Welcome_PlayButton")); 
 			playBtn.x = 500;
 			playBtn.y = 260;
 			this.addChild(playBtn);	
 		
-			aboutBtn = new Button(Assets.getTexture("WelcomeAboutBtn"));
+			aboutBtn = new Button(Assets.getAtlas().getTexture("Welcome_AboutButton"));
 			aboutBtn.x = 410;
 			aboutBtn.y = 380;
 			this.addChild(aboutBtn);
 		
+			this.addEventListener(event.TRIGGERED, onMainMenuClick);
 		}
-			public function initialize():void
+			private function onMainMenuClick(event:Event):void	
+			{
+				var buttonClicked:Button = event.target as Button;
+				if((buttonClicked as Button)== playBtn)
+				{
+					
+				}
+			
+			
+			}
+		
+		
+		public function initialize():void
 			{
 				this.visible = true;
 				
