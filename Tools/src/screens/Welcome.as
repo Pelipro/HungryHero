@@ -71,13 +71,18 @@ package screens
 				var buttonClicked:Button = event.target as Button;
 				if((buttonClicked as Button)== playBtn)
 				{
-					
+					this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id: "play"},true));
 				}
 			
 			
 			}
 		
-		
+		public function disposeTemporarily():void
+		{
+			this.visible = false;
+			
+			if (this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ENTER_FRAME, heroAnimation);
+		}
 		public function initialize():void
 			{
 				this.visible = true;

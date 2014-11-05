@@ -8,6 +8,8 @@ package
 	public class Game extends Sprite
 	{
 		private var screenWelcome:Welcome;
+		private var screenInGame:InGame;
+		
 		public function Game()
 		{
 			super();
@@ -19,10 +21,29 @@ package
 				
 			trace("starling framework initialized!");	
 				
+			
+			this.addEventListener(events.NavigationEvent.CHANGE_SCREEN, onChangeScreen);
+			
+			screenInGame = new InGame();
+			screenInGame.disposeTemporarily();
+			this.addChild(screenInGame);
+			
 			screenWelcome = new Welcome();
 			this.addChild(screenWelcome);
 			screenWelcome.initialize();
-		
 		}
+			
+		private function onChangeScreen(event:NavigationEvent);void
+		{
+			
+			switch (event.params.id)
+			{
+				
+				case "play":
+					screenWelcome.dispose.Temporarily();
+					screenInGame.initialize();
+					break;
+			}
+	}
 	}
 }

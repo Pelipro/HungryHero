@@ -32,5 +32,15 @@ package screens
 				this.addChild(hero);
 			}
 	
-	}
+			public function disposeTemporarily():void
+			{	
+				this.visible = false;
+	
+			}
+			
+			public function initialize():void
+			{
+				this.visible = true;
+			}
+	
 	}
