@@ -28,6 +28,9 @@ package
 			[Embed(source="../media/graphics/welcome_aboutButton.png")]
 			public static const WelcomeAboutBtn:Class;
 		
+			[Embed(source="../media/graphics/bgLayer1.jpg")]
+			public static const bgLayer1:Class;
+			
 			
 			private static var gameTextures:Dictionary = new Dictionary();
 			private static var gameTextureAtlas:TextureAtlas;
